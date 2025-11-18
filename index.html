@@ -3,88 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website Templates</title>
-    <link id="theme-link" rel="stylesheet" href="css/style.css">
+    <title>Website Templates Hub</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- Header/Navigation -->
     <header>
-        <nav class="navbar">
-            <div class="container">
-                <div class="logo">Your Logo</div>
-                <div class="nav-container">
-                    <ul class="nav-links">
-                        <li><a href="index.html" class="active">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                    <div class="style-switcher-mini">
-                        <select id="style-select">
-                            <option value="style1">Style 1</option>
-                            <option value="style2">Style 2</option>
-                            <option value="style3">Style 3</option>
-                        </select>
-                    </div>
-                    <a href="../index.html" class="btn-back">← Back to Hub</a>
-                </div>
-            </div>
-        </nav>
+        <div class="container">
+            <h1>Website Templates Hub</h1>
+            <p>Select a template and preview styles before visiting</p>
+        </div>
     </header>
 
-    <!-- Main Content -->
     <main>
-        <section class="hero">
-            <div class="container">
-                <h1>Welcome to Your Website</h1>
-                <p>Your tagline or brief description goes here</p>
-                <a href="contact.html" class="btn btn-primary">Get Started</a>
-            </div>
-        </section>
-
-        <section class="features">
-            <div class="container">
-                <h2>Why Choose Us?</h2>
-                <div class="feature-grid">
-                    <div class="feature-card">
-                        <h3>Feature One</h3>
-                        <p>Description of your first feature</p>
+        <div class="container">
+            <!-- Template Selection -->
+            <section class="templates">
+                <h2>Select a Template</h2>
+                <div class="template-grid">
+                    <div class="template-card" data-template="A">
+                        <h3>Template A</h3>
+                        <p>Professional business template with multiple pages</p>
+                        <button class="btn btn-primary select-template" data-template="A">Preview & Configure</button>
                     </div>
-                    <div class="feature-card">
-                        <h3>Feature Two</h3>
-                        <p>Description of your second feature</p>
+                    <div class="template-card">
+                        <h3>Template B</h3>
+                        <p>Coming soon - Additional template variant</p>
+                        <button class="btn btn-disabled" disabled>Coming Soon</button>
                     </div>
-                    <div class="feature-card">
-                        <h3>Feature Three</h3>
-                        <p>Description of your third feature</p>
+                    <div class="template-card">
+                        <h3>Template C</h3>
+                        <p>Coming soon - Additional template variant</p>
+                        <button class="btn btn-disabled" disabled>Coming Soon</button>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <section class="cta">
-            <div class="container">
-                <h2>Ready to Get Started?</h2>
-                <p>Contact us today for more information</p>
-                <a href="contact.html" class="btn btn-secondary">Contact Us</a>
-            </div>
-        </section>
+            <!-- Style Preview Section (Hidden by default) -->
+            <section id="style-preview-section" class="style-preview-section hidden">
+                <h2>Choose Your Style</h2>
+                <p class="preview-subtitle">Preview Template A homepage with different styles</p>
+
+                <div class="preview-container">
+                    <!-- Style Buttons -->
+                    <div class="style-selector">
+                        <button class="style-btn active" data-style="style1">
+                            <span class="style-label">Style 1</span>
+                        </button>
+                        <button class="style-btn" data-style="style2">
+                            <span class="style-label">Style 2</span>
+                        </button>
+                        <button class="style-btn" data-style="style3">
+                            <span class="style-label">Style 3</span>
+                        </button>
+                    </div>
+
+                    <!-- Preview Area -->
+                    <div class="preview-area">
+                        <div class="preview-header">
+                            <p>Live Preview</p>
+                            <button class="close-preview" title="Close preview">&times;</button>
+                        </div>
+                        <iframe id="style-preview" src="" frameborder="0"></iframe>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="preview-actions">
+                        <button class="btn btn-secondary" id="back-to-templates">← Back to Templates</button>
+                        <button class="btn btn-primary" id="visit-template">Visit Selected Style →</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Shared Resources -->
+            <section id="resources-section" class="resources">
+                <h2>Resources</h2>
+                <ul>
+                    <li><a href="https://github.com/JordanNobert99/WebsiteTemplates" target="_blank">GitHub Repository</a></li>
+                    <li><a href="https://www.netlify.com/" target="_blank">Deploy with Netlify</a></li>
+                    <li><a href="docs/README.md">Documentation</a></li>
+                </ul>
+            </section>
+        </div>
     </main>
 
-    <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2025 Your Website. All rights reserved.</p>
-            <ul class="footer-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
+            <p>&copy; 2025 Website Templates. All rights reserved.</p>
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
-    <script src="js/style-switcher-template.js"></script>
+    <script src="js/template-preview.js"></script>
 </body>
 </html>
