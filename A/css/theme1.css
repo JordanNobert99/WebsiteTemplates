@@ -1,0 +1,116 @@
+/* Colors & Fonts - Style 1: Modern Blue Professional */
+:root {
+    --primary-color: #3498db;
+    --primary-dark: #2980b9;
+    --text-color: #2c3e50;
+    --text-light: #7f8c8d;
+    --bg-color: #ecf0f1;
+    --white: #ffffff;
+    --accent-color: #3498db;
+    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --font-weight-light: 400;
+    --font-weight-bold: 700;
+}
+
+body {
+    font-family: var(--font-family);
+    color: var(--text-color);
+    background-color: var(--bg-color);
+}
+
+header {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+    color: var(--white);
+}
+
+    header h1 {
+        color: var(--white);
+        font-weight: var(--font-weight-bold);
+    }
+
+.navbar {
+    background: var(--text-color);
+}
+
+.logo {
+    color: var(--accent-color);
+}
+
+.nav-links a {
+    color: var(--white);
+}
+
+    .nav-links a:hover,
+    .nav-links a.active {
+        color: var(--accent-color);
+    }
+
+.hero h1 {
+    color: var(--text-color);
+}
+
+.hero p {
+    color: var(--text-light);
+}
+
+.features h2 {
+    color: var(--text-color);
+}
+
+.feature-card {
+    background: #f8f9fa;
+    border-left-color: var(--accent-color);
+}
+
+    .feature-card h3 {
+        color: var(--text-color);
+    }
+
+    .feature-card p {
+        color: var(--text-light);
+    }
+
+.cta {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+    color: var(--white);
+}
+
+    .cta h2 {
+        color: var(--white);
+    }
+
+    .cta p {
+        color: var(--white);
+    }
+
+.btn-primary {
+    background: var(--primary-color);
+    color: var(--white);
+}
+
+    .btn-primary:hover {
+        background: var(--primary-dark);
+    }
+
+.btn-secondary {
+    color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+    .btn-secondary:hover {
+        background: var(--accent-color);
+        color: var(--white);
+    }
+
+footer {
+    background: var(--text-color);
+    color: var(--white);
+}
+
+.footer-links a {
+    color: #bdc3c7;
+}
+
+    .footer-links a:hover {
+        color: var(--accent-color);
+    }

@@ -1,0 +1,229 @@
+/* Layout & Structure - Style 3: Minimal Clean Lines */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+header {
+    padding: 70px 0;
+    text-align: center;
+    border-bottom: 3px solid;
+}
+
+    header h1 {
+        font-size: 2.8rem;
+        margin-bottom: 15px;
+        font-weight: 300;
+        letter-spacing: 2px;
+    }
+
+    header p {
+        font-size: 1.1rem;
+        opacity: 0.8;
+        letter-spacing: 1px;
+    }
+
+/* Navigation */
+.navbar {
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid;
+}
+
+    .navbar .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+.logo {
+    font-size: 1.4rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+}
+
+    .nav-links a {
+        text-decoration: none;
+        font-weight: 300;
+        transition: all 0.3s ease;
+        font-size: 0.95rem;
+        letter-spacing: 1px;
+    }
+
+/* Main Content */
+main {
+    padding: 80px 0;
+}
+
+section {
+    margin-bottom: 80px;
+}
+
+/* Hero Section */
+.hero {
+    padding: 120px 0;
+    text-align: center;
+    border: 1px solid;
+    margin-bottom: 60px;
+}
+
+    .hero h1 {
+        font-size: 3.5rem;
+        margin-bottom: 25px;
+        font-weight: 300;
+        letter-spacing: 2px;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+        margin-bottom: 50px;
+        font-weight: 300;
+        letter-spacing: 0.5px;
+    }
+
+/* Features Section */
+.features {
+    padding: 80px 0;
+    border: 1px solid;
+}
+
+    .features h2 {
+        font-size: 2.6rem;
+        text-align: center;
+        margin-bottom: 70px;
+        font-weight: 300;
+        letter-spacing: 2px;
+    }
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+}
+
+.feature-card {
+    padding: 50px 30px;
+    border-left: 3px solid;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+    .feature-card:hover {
+        transform: translateX(10px);
+    }
+
+    .feature-card h3 {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+        font-weight: 400;
+        letter-spacing: 1px;
+    }
+
+    .feature-card p {
+        line-height: 2;
+        font-weight: 300;
+    }
+
+/* CTA Section */
+.cta {
+    padding: 100px 0;
+    text-align: center;
+    border: 1px solid;
+    border-top: 3px solid;
+}
+
+    .cta h2 {
+        font-size: 2.6rem;
+        margin-bottom: 20px;
+        font-weight: 300;
+        letter-spacing: 2px;
+    }
+
+    .cta p {
+        font-size: 1.2rem;
+        margin-bottom: 50px;
+        opacity: 0.8;
+        font-weight: 300;
+        letter-spacing: 0.5px;
+    }
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 14px 45px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 400;
+    transition: all 0.3s ease;
+    letter-spacing: 1px;
+}
+
+/* Footer */
+footer {
+    padding: 50px 0;
+    text-align: center;
+    border-top: 1px solid;
+}
+
+.footer-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+    .footer-links a {
+        text-decoration: none;
+        transition: color 0.3s ease;
+        font-weight: 300;
+        letter-spacing: 0.5px;
+    }
+
+/* Responsive */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+        letter-spacing: 1px;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+        letter-spacing: 1px;
+    }
+
+    .nav-links {
+        gap: 20px;
+    }
+
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .features h2 {
+        font-size: 2rem;
+        letter-spacing: 1px;
+    }
+}

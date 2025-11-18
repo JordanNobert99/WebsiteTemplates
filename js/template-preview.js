@@ -1,72 +1,50 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const selectTemplateButtons = document.querySelectorAll('.select-template');
-    const stylePreviewModal = document.getElementById('style-preview-modal');
-    const styleButtons = document.querySelectorAll('.style-btn');
+    const templateSelector = document.getElementById('template-selector');
+    const layoutSelector = document.getElementById('layout-selector');
+    const themeSelector = document.getElementById('theme-selector');
     const previewIframe = document.getElementById('style-preview');
-    const backButton = document.getElementById('back-to-templates');
     const visitButton = document.getElementById('visit-template');
-    const closeButton = document.querySelector('.modal-close');
 
-    let selectedTemplate = null;
-    let selectedStyle = localStorage.getItem('selectedStyle') || 'style1';
+    let selectedTemplate = 'A';
+    let selectedLayout = 'layout1';
+    let selectedTheme = 'theme1';
 
-    // Template selection
-    selectTemplateButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            selectedTemplate = this.getAttribute('data-template');
-            updateStyleButtons();
-            showStylePreview();
-            loadPreview();
-        });
+    // Clear localStorage when landing on index.html to reset to defaults
+    localStorage.removeItem('selectedLayout');
+    localStorage.removeItem('selectedTheme');
+
+    // Load preview immediately
+    loadPreview();
+
+    // Template selector change
+    templateSelector.addEventListener('change', function() {
+        selectedTemplate = this.value;
+        loadPreview();
     });
 
-    // Style button click handlers
-    styleButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            const style = this.getAttribute('data-style');
-            selectedStyle = style;
-            updateStyleButtons();
-            loadPreview();
-        });
+    // Layout selector change
+    layoutSelector.addEventListener('change', function() {
+        selectedLayout = this.value;
+        localStorage.setItem('selectedLayout', selectedLayout);
+        loadPreview();
     });
 
-    // Back to templates
-    backButton.addEventListener('click', function() {
-        hideStylePreview();
-    });
-
-    // Close preview button
-    closeButton.addEventListener('click', function() {
-        hideStylePreview();
+    // Theme selector change
+    themeSelector.addEventListener('change', function() {
+        selectedTheme = this.value;
+        localStorage.setItem('selectedTheme', selectedTheme);
+        loadPreview();
     });
 
     // Visit selected style
     visitButton.addEventListener('click', function() {
-        localStorage.setItem('selectedStyle', selectedStyle);
-        window.location.href = `${selectedTemplate}/index.html`;
+        localStorage.setItem('selectedLayout', selectedLayout);
+        localStorage.setItem('selectedTheme', selectedTheme);
+        window.location.href = `${selectedTemplate}/html/home.html?layout=${selectedLayout}&theme=${selectedTheme}`;
     });
 
-    function showStylePreview() {
-        stylePreviewModal.classList.remove('hidden');
-    }
-
-    function hideStylePreview() {
-        stylePreviewModal.classList.add('hidden');
-    }
-
     function loadPreview() {
-        const previewUrl = `${selectedTemplate}/preview.html?style=${selectedStyle}`;
-        console.log('Loading preview from:', previewUrl);
+        const previewUrl = `${selectedTemplate}/preview.html?layout=${selectedLayout}&theme=${selectedTheme}`;
         previewIframe.src = previewUrl;
-    }
-
-    function updateStyleButtons() {
-        styleButtons.forEach(button => {
-            if (button.getAttribute('data-style') === selectedStyle) {
-                button.classList.add('active');
-            } else {
-                button.classList.remove('active');
-            }
-        });
     }
 });

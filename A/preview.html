@@ -4,14 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Preview - Template A</title>
-    <link id="theme-link" rel="stylesheet" href="css/style1.css">
-    <style>
-        /* Disable pointer events on all links in preview */
-        a {
-            pointer-events: none;
-            cursor: default;
-        }
-    </style>
+    <link id="layout-link" rel="stylesheet" href="css/layout1.css">
+    <link id="theme-link" rel="stylesheet" href="css/theme1.css">
 </head>
 <body>
     <!-- Header/Navigation -->
@@ -20,10 +14,10 @@
             <div class="container">
                 <div class="logo">Your Logo</div>
                 <ul class="nav-links">
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="html/home.html" class="active">Home</a></li>
+                    <li><a href="html/about.html">About</a></li>
+                    <li><a href="html/services.html">Services</a></li>
+                    <li><a href="html/contact.html">Contact</a></li>
                 </ul>
             </div>
         </nav>
@@ -35,7 +29,7 @@
             <div class="container">
                 <h1>Welcome to Your Website</h1>
                 <p>Your tagline or brief description goes here</p>
-                <a href="contact.html" class="btn btn-primary">Get Started</a>
+                <a href="html/contact.html" class="btn btn-primary">Get Started</a>
             </div>
         </section>
 
@@ -63,7 +57,7 @@
             <div class="container">
                 <h2>Ready to Get Started?</h2>
                 <p>Contact us today for more information</p>
-                <a href="contact.html" class="btn btn-secondary">Contact Us</a>
+                <a href="html/contact.html" class="btn btn-secondary">Contact Us</a>
             </div>
         </section>
     </main>
@@ -73,29 +67,36 @@
         <div class="container">
             <p>&copy; 2025 Your Website. All rights reserved.</p>
             <ul class="footer-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="html/home.html">Home</a></li>
+                <li><a href="html/about.html">About</a></li>
+                <li><a href="html/services.html">Services</a></li>
+                <li><a href="html/contact.html">Contact</a></li>
             </ul>
         </div>
     </footer>
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
+            const layoutLink = document.getElementById('layout-link');
             const themeLink = document.getElementById('theme-link');
             const params = new URLSearchParams(window.location.search);
-            const style = params.get('style') || 'style1';
+            const layout = params.get('layout') || 'layout1';
+            const theme = params.get('theme') || 'theme1';
 
-            // Load the selected style
-            themeLink.href = `css/${style}.css`;
+            // Load the selected layout and theme
+            layoutLink.href = `css/${layout}.css`;
+            themeLink.href = `css/${theme}.css`;
 
-            // Prevent all links from navigating in preview mode
-            document.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    return false;
-                });
+            // Append layout and theme parameters to all navigation links
+            document.querySelectorAll('a[href$=".html"]').forEach(link => {
+                const href = link.getAttribute('href');
+                if (!href.startsWith('http') && !href.includes('?')) {
+                    let newHref = href + '?';
+                    if (layout) newHref += `layout=${layout}`;
+                    if (layout && theme) newHref += '&';
+                    if (theme) newHref += `theme=${theme}`;
+                    link.setAttribute('href', newHref);
+                }
             });
         });
     </script>

@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>window.onload = function () { window.scrollTo(0, 0); }</script>
     <title>Website Templates Hub</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -10,30 +11,50 @@
     <header>
         <div class="container">
             <h1>Website Templates Hub</h1>
-            <p>Select a template and preview styles before visiting</p>
         </div>
     </header>
 
     <main>
         <div class="container">
-            <!-- Template Selection -->
-            <section class="templates">
-                <h2>Select a Template</h2>
-                <div class="template-grid">
-                    <div class="template-card" data-template="A">
-                        <h3>Template A</h3>
-                        <p>Professional business template with multiple pages</p>
-                        <button class="btn btn-primary select-template" data-template="A">Preview & Configure</button>
+            <section id="main-section" class="main-section">
+                <div id="preview-view" class="preview-view">
+                    <div class="preview-controls">
+
+                        <div class="style-group">
+                            <h3>Template</h3>
+                            <select id="template-selector" class="template-selector">
+                                <option value="A">Template A</option>
+                                <option value="B">Template B</option>
+                                <option value="C">Template C</option>
+                            </select>
+                        </div>
+
+                        <div class="style-group">
+                            <h3>Layouts</h3>
+                            <select id="layout-selector" class="layout-selector">
+                                <option value="layout1">Layout 1</option>
+                                <option value="layout2">Layout 2</option>
+                                <option value="layout3">Layout 3</option>
+                            </select>
+                        </div>
+
+                        <div class="style-group">
+                            <h3>Themes</h3>
+                            <select id="theme-selector" class="theme-selector">
+                                <option value="theme1">Theme 1</option>
+                                <option value="theme2">Theme 2</option>
+                                <option value="theme3">Theme 3</option>
+                            </select>
+                        </div>
+
+                        <button class="btn btn-primary" id="visit-template">Visit →</button>
                     </div>
-                    <div class="template-card">
-                        <h3>Template B</h3>
-                        <p>Coming soon - Additional template variant</p>
-                        <button class="btn btn-disabled" disabled>Coming Soon</button>
-                    </div>
-                    <div class="template-card">
-                        <h3>Template C</h3>
-                        <p>Coming soon - Additional template variant</p>
-                        <button class="btn btn-disabled" disabled>Coming Soon</button>
+
+                    <div class="preview-container">
+                        <div class="preview-header">
+                            <p>Live Preview</p>
+                        </div>
+                        <iframe id="style-preview" src="" frameborder="0"></iframe>
                     </div>
                 </div>
             </section>
@@ -45,38 +66,6 @@
             <p>&copy; 2025 Website Templates. All rights reserved.</p>
         </div>
     </footer>
-
-    <!-- Style Preview Modal (Hidden by default) -->
-    <div id="style-preview-modal" class="style-preview-modal hidden">
-        <div class="modal-header">
-            <h2>Choose Your Style</h2>
-            <button class="modal-close" title="Close preview">&times;</button>
-        </div>
-
-        <div class="style-selector">
-            <button class="style-btn active" data-style="style1">
-                <span class="style-label">Style 1</span>
-            </button>
-            <button class="style-btn" data-style="style2">
-                <span class="style-label">Style 2</span>
-            </button>
-            <button class="style-btn" data-style="style3">
-                <span class="style-label">Style 3</span>
-            </button>
-        </div>
-
-        <div class="preview-container">
-            <div class="preview-header">
-                <p>Live Preview</p>
-            </div>
-            <iframe id="style-preview" src="" frameborder="0"></iframe>
-        </div>
-
-        <div class="preview-actions">
-            <button class="btn btn-secondary" id="back-to-templates">← Back to Templates</button>
-            <button class="btn btn-primary" id="visit-template">Visit Selected Style →</button>
-        </div>
-    </div>
 
     <script src="js/template-preview.js"></script>
 </body>
