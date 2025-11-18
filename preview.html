@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Preview - Template A</title>
     <link id="theme-link" rel="stylesheet" href="css/style1.css">
+    <style>
+        /* Disable pointer events on all links in preview */
+        a {
+            pointer-events: none;
+            cursor: default;
+        }
+    </style>
 </head>
 <body>
     <!-- Header/Navigation -->
@@ -82,6 +89,14 @@
 
             // Load the selected style
             themeLink.href = `css/${style}.css`;
+
+            // Prevent all links from navigating in preview mode
+            document.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    return false;
+                });
+            });
         });
     </script>
 </body>
