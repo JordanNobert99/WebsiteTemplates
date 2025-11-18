@@ -1,11 +1,5 @@
 [build]
-  command = "npm run build"
   publish = "."
-
-[[redirects]]
-  from = "/A/*"
-  to = "/A/:splat"
-  status = 200
 
 [[redirects]]
   from = "/*"
