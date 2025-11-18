@@ -14,7 +14,9 @@ document.addEventListener('DOMContentLoaded', function() {
     selectTemplateButtons.forEach(button => {
         button.addEventListener('click', function() {
             selectedTemplate = this.getAttribute('data-template');
+            updateStyleButtons();
             showStylePreview();
+            loadPreview();
         });
     });
 
@@ -46,7 +48,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function showStylePreview() {
         stylePreviewModal.classList.remove('hidden');
-        loadPreview();
     }
 
     function hideStylePreview() {
@@ -55,6 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function loadPreview() {
         const previewUrl = `${selectedTemplate}/preview.html?style=${selectedStyle}`;
+        console.log('Loading preview from:', previewUrl);
         previewIframe.src = previewUrl;
     }
 

@@ -75,11 +75,12 @@
     </footer>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const themeLink = document.getElementById('theme-link');
             const params = new URLSearchParams(window.location.search);
             const style = params.get('style') || 'style1';
-            
+
+            // Load the selected style
             themeLink.href = `css/${style}.css`;
         });
     </script>
