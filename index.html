@@ -37,52 +37,6 @@
                     </div>
                 </div>
             </section>
-
-            <!-- Style Preview Section (Hidden by default) -->
-            <section id="style-preview-section" class="style-preview-section hidden">
-                <h2>Choose Your Style</h2>
-                <p class="preview-subtitle">Preview Template A homepage with different styles</p>
-
-                <div class="preview-container">
-                    <!-- Style Buttons -->
-                    <div class="style-selector">
-                        <button class="style-btn active" data-style="style1">
-                            <span class="style-label">Style 1</span>
-                        </button>
-                        <button class="style-btn" data-style="style2">
-                            <span class="style-label">Style 2</span>
-                        </button>
-                        <button class="style-btn" data-style="style3">
-                            <span class="style-label">Style 3</span>
-                        </button>
-                    </div>
-
-                    <!-- Preview Area -->
-                    <div class="preview-area">
-                        <div class="preview-header">
-                            <p>Live Preview</p>
-                            <button class="close-preview" title="Close preview">&times;</button>
-                        </div>
-                        <iframe id="style-preview" src="" frameborder="0"></iframe>
-                    </div>
-
-                    <!-- Action Buttons -->
-                    <div class="preview-actions">
-                        <button class="btn btn-secondary" id="back-to-templates">← Back to Templates</button>
-                        <button class="btn btn-primary" id="visit-template">Visit Selected Style →</button>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Shared Resources -->
-            <section id="resources-section" class="resources">
-                <h2>Resources</h2>
-                <ul>
-                    <li><a href="https://github.com/JordanNobert99/WebsiteTemplates" target="_blank">GitHub Repository</a></li>
-                    <li><a href="https://www.netlify.com/" target="_blank">Deploy with Netlify</a></li>
-                    <li><a href="docs/README.md">Documentation</a></li>
-                </ul>
-            </section>
         </div>
     </main>
 
@@ -91,6 +45,38 @@
             <p>&copy; 2025 Website Templates. All rights reserved.</p>
         </div>
     </footer>
+
+    <!-- Style Preview Modal (Hidden by default) -->
+    <div id="style-preview-modal" class="style-preview-modal hidden">
+        <div class="modal-header">
+            <h2>Choose Your Style</h2>
+            <button class="modal-close" title="Close preview">&times;</button>
+        </div>
+
+        <div class="style-selector">
+            <button class="style-btn active" data-style="style1">
+                <span class="style-label">Style 1</span>
+            </button>
+            <button class="style-btn" data-style="style2">
+                <span class="style-label">Style 2</span>
+            </button>
+            <button class="style-btn" data-style="style3">
+                <span class="style-label">Style 3</span>
+            </button>
+        </div>
+
+        <div class="preview-container">
+            <div class="preview-header">
+                <p>Live Preview</p>
+            </div>
+            <iframe id="style-preview" src="" frameborder="0"></iframe>
+        </div>
+
+        <div class="preview-actions">
+            <button class="btn btn-secondary" id="back-to-templates">← Back to Templates</button>
+            <button class="btn btn-primary" id="visit-template">Visit Selected Style →</button>
+        </div>
+    </div>
 
     <script src="js/template-preview.js"></script>
 </body>
