@@ -1,0 +1,20 @@
+# Visual Studio
+.vs/
+*.vsidx
+*.user
+*.suo
+*.sln.docstates
+
+# Build results
+bin/
+obj/
+Debug/
+Release/
+
+# Dependencies
+node_modules/
+.env
+
+# OS
+.DS_Store
+Thumbs.db
