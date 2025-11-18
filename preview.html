@@ -6,10 +6,24 @@
     <title>Preview - Template A</title>
     <link id="theme-link" rel="stylesheet" href="css/style1.css">
     <style>
+        /* Hide hub-specific elements in preview */
+        .templates,
+        .template-grid,
+        .template-card,
+        .select-template,
+        .resources {
+            display: none !important;
+        }
+
         /* Disable pointer events on all links in preview */
         a {
             pointer-events: none;
             cursor: default;
+        }
+
+        /* Adjust header padding for preview */
+        header {
+            padding: 40px 0;
         }
     </style>
 </head>
